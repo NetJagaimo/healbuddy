@@ -1,0 +1,52 @@
+:root {
+  --bg: #fbf7f2;
+  --surface: #ffffff;
+  --ink: #2b2622;
+  --muted: #8a7f76;
+  --line: #ece4db;
+  --accent: #f2a65a;
+  --accent-soft: #fdebd6;
+  --accent-ink: #c26a17;
+  --nav-h: 58px;
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang TC', 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
+  -webkit-tap-highlight-color: transparent;
+  overflow-x: hidden;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.page-head h1 {
+  font-size: 1.25rem;
+  margin: 0.25rem 0 0.9rem;
+}
+
+.card {
+  background: var(--surface);
+  border-radius: 16px;
+  padding: 0.9rem 1rem;
+  margin-bottom: 0.9rem;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.05);
+}
+
+.section-title {
+  font-size: 0.95rem;
+  margin: 0 0 0.4rem;
+  color: var(--muted);
+  font-weight: 600;
+}
