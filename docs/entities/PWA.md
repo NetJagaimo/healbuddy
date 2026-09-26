@@ -33,6 +33,8 @@ healbuddy 以 PWA（Progressive Web App）形式提供，使用者從瀏覽器�
 - [[github.io架站]] — PWA 部署的位置；GitHub Pages 提供 HTTPS，符合 Service Worker 要求
 - [[Svelte]] — 用來實作 PWA 的前端框架
 - [[前端測試]] — 需驗證可安裝性（manifest）與離線行為
+- [[PWA安裝提示]] — 教使用者安裝，支援時一鍵安裝
 
 ## 變更紀錄
 - 2026-09-26 建立
+- 2026-09-26 連結 [[PWA安裝提示]]

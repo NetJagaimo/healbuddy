@@ -1,5 +1,7 @@
 <script>
-  let { store } = $props();
+  import InstallPrompt from '../components/InstallPrompt.svelte';
+
+  let { store, install } = $props();
 
   let newFood = $state('');
   let newExName = $state('');
@@ -124,6 +126,8 @@
     <button type="submit">新增</button>
   </form>
 </section>
+
+{#if install}<InstallPrompt {install} />{/if}
 
 <section class="card" aria-label="備份">
   <h2 class="section-title">備份</h2>

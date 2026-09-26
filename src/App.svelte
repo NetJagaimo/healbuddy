@@ -5,7 +5,7 @@
   import ItemsPage from './pages/ItemsPage.svelte';
   import Toast from './components/Toast.svelte';
 
-  let { store } = $props();
+  let { store, install } = $props();
 
   // hash 路由，避免 GitHub Pages 深層路徑 404（見 docs/entities/github.io架站.md）
   const TABS = [
@@ -44,11 +44,11 @@
   {#if !store.ready}
     <p class="loading">載入中…</p>
   {:else if tab === 'today'}
-    <TodayPage {store} />
+    <TodayPage {store} {install} />
   {:else if tab === 'records'}
     <RecordsPage {store} />
   {:else}
-    <ItemsPage {store} />
+    <ItemsPage {store} {install} />
   {/if}
 </main>
 
@@ -64,7 +64,7 @@
   main {
     max-width: 520px;
     margin: 0 auto;
-    padding: calc(0.75rem + env(safe-area-inset-top)) 16px calc(var(--nav-h) + 5rem);
+    padding: calc(1.75rem + env(safe-area-inset-top)) 16px calc(var(--nav-h) + 5rem);
   }
   nav {
     position: fixed;
