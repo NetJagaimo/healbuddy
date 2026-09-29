@@ -46,6 +46,19 @@ test('新增、修改運動項目後出現在首頁', async ({ page }) => {
   await expect(page.getByRole('button', { name: '🤽 水中運動' })).toBeVisible();
 });
 
+test('窄螢幕上編輯運動時，儲存與取消按鈕都在畫面內', async ({ page }) => {
+  await page.setViewportSize({ width: 360, height: 740 });
+  await open(page, '#/items');
+  await page.getByRole('button', { name: '編輯 游泳' }).click();
+  for (const name of ['儲存', '取消']) {
+    const box = await page.getByRole('button', { name, exact: true }).boundingBox();
+    expect(box.x + box.width).toBeLessThanOrEqual(360);
+  }
+  await page.getByLabel('運動名稱', { exact: true }).fill('自由式');
+  await page.getByRole('button', { name: '儲存' }).click();
+  await expect(page.getByRole('region', { name: '運動項目' })).toContainText('自由式');
+});
+
 test('匯出備份後可在新裝置匯入', async ({ page, browser }) => {
   await open(page);
   await addFoods(page, ['珍奶']);

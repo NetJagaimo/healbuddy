@@ -172,6 +172,8 @@
     display: flex;
     gap: 0.4rem;
     flex: 1;
+    /* 讓編輯列能縮到比輸入框預設寬度還窄，否則窄螢幕上儲存／取消會被推出畫面外 */
+    min-width: 0;
   }
   input {
     flex: 1;
